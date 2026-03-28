@@ -130,9 +130,9 @@ When the player questions a suspect about their actions or motives, your respons
 ## OUTPUT FORMAT
 
 Always return **only** valid JSON. No additional text.
+Return ONLY valid JSON, no markdown code blocks, no extra text.
 
 **Example when player moves:**
-```json
 {
   "message": "You walk into the garden. Moonlight glints off the gazebo. The rose bushes are dark and tangled.",
   "new_clue": null,
@@ -142,7 +142,6 @@ Always return **only** valid JSON. No additional text.
 }
 
 **Example when player finds a clue:**
-```json
 {
   "message": "You lift the flowerpot. A small scrap of fabric is caught on the rim. It looks like a piece of a glove, with a faint paint stain.",
   "new_clue": "A torn glove in Molly’s belongings – the right hand is missing a piece of fabric.",
@@ -152,7 +151,6 @@ Always return **only** valid JSON. No additional text.
 }
 
 **Example when player questions Eleanor with evidence and gets her confession:**
-```json
 {
   "message": "Eleanor lowers her voice. 'Yes… I took it first. I hid it in the gazebo, planning to retrieve it later. But when I went back, it was gone. I swear I don’t have it now.'",
   "new_clue": "Eleanor confessed she initially stole the painting and hid it in the gazebo.",
@@ -162,7 +160,6 @@ Always return **only** valid JSON. No additional text.
 }
 
 **Example when player correctly accuses Molly:**
-```json
 {
   "message": "You confront Molly, showing her the torn glove and reminding her of the notebook. Her face drains of color. 'I found it in the gazebo,' she whispers. 'I just wanted to spite him… it's under my bed.' She leads you to her room, where the painting is indeed hidden. The case is solved.",
   "new_clue": null,
@@ -173,7 +170,6 @@ Always return **only** valid JSON. No additional text.
 }
 
 **Example when player accuses incorrectly:**
-```json
 {
   "message": "Alfred looks shocked. 'I only checked on the painting!' Further investigation shows the painting is still hidden in the maid’s room. Alfred is innocent. The true thief remains free...",
   "new_clue": null,
