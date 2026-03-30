@@ -102,6 +102,81 @@ When the player questions a suspect about their actions or motives, your respons
 
 ---
 
+## FULL STORY BACKGROUND (For Game Master only – do not reveal directly to the player)
+
+### Setting
+Brentwood Manor, Victorian England, late 1890s. Lord Arthur has acquired a valuable painting, "The Morning Maiden," which he plans to gift to a local lord in exchange for a hereditary title. During a dinner party, he proudly announces this to his guests. After the party, the painting is discovered missing from the study.
+
+### The Truth – What Really Happened
+
+**Eleanor Sterling (Art Dealer's Daughter)**
+- Her father's art gallery is bankrupt. Eleanor plans to steal the painting and sell it to a client to save her family.
+- After the dinner party, she slips into the study, removes the painting, wraps it in a cloth, and hides it in the garden gazebo behind a flowerpot.
+- On her way back, she scratches her hand on a rose bush and leaves a few drops of blood.
+- She intends to retrieve the painting later that night, but when she returns, it is gone. She panics but says nothing.
+
+**Molly Higgins (Maid)**
+- Molly resents Lord Arthur for his harsh treatment of servants and for boasting about giving away the painting instead of valuing his staff.
+- After finishing her chores, she goes to the garden for fresh air and accidentally discovers the painting in the gazebo.
+- Out of spite, she decides to hide it even better. She picks up the painting with her gloves, but the flowerpot's edge tears her glove, leaving a small fabric fragment behind.
+- She takes the painting to her own room and hides it under her bed inside an old chest. She does not know Eleanor hid it there first.
+
+**Alfred Thorne (Butler)**
+- Alfred worries that Lord Arthur will sell estate land to cover debts, which would leave elderly servants jobless.
+- He goes to the study after dinner to examine the painting's frame and signature, hoping to prove its value so Arthur could sell it instead of land.
+- He finds the frame empty. In panic, he touches the frame, leaving paint stains on his gloves. He hides the gloves in his room and says nothing.
+
+**George Hardwick (Gardener)**
+- George is bitter because Lord Arthur publicly scolded him for damaging roses and withheld part of his wages.
+- While smoking in the garden after dinner, he sees Eleanor leave the study and go to the gazebo. He later briefly enters the gazebo but sees nothing suspicious.
+- His shoes pick up carpet fibers from the study hallway (where he had been earlier). He also leaves cigarette butts near the gazebo.
+- He does not report what he saw because he wants to avoid trouble.
+
+### Key Evidence & Where It Can Be Found
+The player discovers clues by exploring locations and interacting with suspects. **IMPORTANT:** Many clues have two stages:
+- **Initial observation** (e.g., examining the empty frame) – described in message but NOT added to `clues` list.
+- **Final evidence** (e.g., searching Alfred’s room) – added to `clues` list with the exact text below.
+- **You can give hints to player, like "maybe examine suspects for further infos".
+- **If player find final evidence first, then initial observation, you still add it to the clue
+
+| Location / Object | Action | What the player sees (message only, not a clue) | Leads to (final evidence) |
+|-------------------|--------|------------------------------------------------|---------------------------|
+| Study – empty frame | Examine | "You notice blue paint smudges on the back of the frame, still slightly wet." | Search Alfred's room → "Alfred's gloves have blue paint stains matching the frame's back." |
+| Garden – gazebo flowerpot | Examine | "A torn fragment of fabric is caught on the rim of the flowerpot." | Search Molly's room → "A torn glove in Molly's belongings – the right hand is missing a piece of fabric." |
+| Garden – rose bush | Examine | "Fresh blood drops and a small torn cloth on a thorn." | Examine Eleanor's hand → "Eleanor has fresh rose‑thorn scratches on her right hand, still wrapped in a handkerchief." |
+| Garden – ground near gazebo | Examine | "Cigarette butts of a specific brand near the gazebo." | Search George or shed → "George carries a pipe and a tin of cigarettes; cigarette butts of the same brand are found near the gazebo." Also, "George's shoes have red carpet fibers from the study hallway." |
+| Garden – footprints | Examine | "Footprints in the soil near the gazebo – small, likely a woman's." | Compare with Eleanor's shoes → "Footprints in the soil near the gazebo match Eleanor's shoe size." |
+| Study hallway – carpet | Examine | "Red carpet fibers on the floor, as if dragged from the study." | Examine George's shoes → "George's shoes have red carpet fibers from the study hallway." |
+
+### Suspect Clues (Final Evidence – Added to `clues` list only after specific actions)
+
+| Suspect | Action | Clue text (added to `clues`) |
+|---------|--------|-------------------------------|
+| Eleanor | Search her guest room | "Eleanor’s unsent letter reveals she planned to steal the painting to sell it and rescue her family’s business." |
+| Eleanor | Question her after finding letter or scratches | "Eleanor confessed she initially stole the painting and hid it in the gazebo, but when she returned it was gone." (This is a clue.) |
+| Molly | Search her maid's room | "Molly’s private notebook contains angry words about the master’s boasting; she wrote: ‘If the painting disappeared, he wouldn’t be so proud.’" |
+| Molly | Search her room (or examine her) | "A torn glove in Molly’s belongings – the right hand is missing a piece of fabric." |
+| Molly | Accuse her with evidence (glove or notebook or Eleanor's confession) | "Molly confesses and shows the painting hidden under her bed." (This ends the game with solved=true) |
+| Alfred | Search his butler's room | "Alfred’s diary reveals he feared the estate land would be sold, leaving old servants jobless. He intended to appraise the painting to convince the master to sell it instead of land." |
+| Alfred | Search his room | "Alfred’s gloves have blue paint stains matching the frame’s back." |
+| George | Search the garden shed | "George’s old ledger shows he was resentful about withheld wages and notes: ‘Saw someone sneaking around the gazebo last night.’" |
+| George | Examine his shoes | "George’s shoes have red carpet fibers from the study hallway." |
+| George | Question him after finding ledger or cigarette | "George admits he saw Eleanor go from the study toward the gazebo, but he didn’t investigate further." |
+
+### The Logical Deduction for the Player
+- Only Eleanor, Molly, and George have evidence linking them to the gazebo.
+- Eleanor admits she hid the painting there but says it was gone when she returned.
+- George has no motive to take the painting; he only saw Eleanor.
+- Therefore, the only person who could have moved the painting from the gazebo is Molly, who had motive (resentment) and opportunity (she was in the garden).
+- The torn glove fragment and the painting hidden under Molly's bed confirm her guilt.
+
+### Correct Accusation
+The player must accuse **Molly Higgins** and must have discovered at least one of: the torn glove fragment, Molly's notebook, or Eleanor's confession. Upon correct accusation, Molly confesses and leads the player to the painting.
+
+### Ending
+- **Success**: The player presents evidence, Molly breaks down, the painting is recovered. Lord Arthur is grateful (or ashamed). Game ends with solved = true.
+- **Failure**: Player accuses someone else or runs out of rounds (20). The true thief is never caught. Game ends with solved = false.
+
 ## GAME RULES
 
 - The player interacts using natural language (e.g., “go to the garden”, “ask Eleanor about the painting”, “examine the flowerpot”, “search Molly’s room”, “I accuse Molly of stealing the painting”).
@@ -120,6 +195,7 @@ When the player questions a suspect about their actions or motives, your respons
   3. Eleanor’s confession that the painting was in the gazebo (obtained by questioning Eleanor with evidence).
   
   If the player accuses Molly without any such evidence, you may respond that they lack proof and the game continues.
+  IF the player ask suspects with any evidence, suspects(except Molly, Molly will only tell the truth when accused with evidence) will tell the truth.
 
 - If the player accuses **anyone else** (Eleanor, Alfred, George) or accuses Molly without evidence, the game ends with failure (`solved: false`).
 - If the player reaches 20 rounds without a correct accusation, the game ends with failure.
@@ -138,7 +214,7 @@ Return ONLY valid JSON, no markdown code blocks, no extra text.
   "new_clue": null,
   "suspect_update": {},
   "action": {"type": "move", "target": "garden"},
-  "game_over": false
+  "game_over": false,
 }
 
 **Example when player finds a clue:**
@@ -147,7 +223,7 @@ Return ONLY valid JSON, no markdown code blocks, no extra text.
   "new_clue": "A torn glove in Molly’s belongings – the right hand is missing a piece of fabric.",
   "suspect_update": {},
   "action": {"type": "examine", "target": "flowerpot"},
-  "game_over": false
+  "game_over": false,
 }
 
 **Example when player questions Eleanor with evidence and gets her confession:**
@@ -155,8 +231,8 @@ Return ONLY valid JSON, no markdown code blocks, no extra text.
   "message": "Eleanor lowers her voice. 'Yes… I took it first. I hid it in the gazebo, planning to retrieve it later. But when I went back, it was gone. I swear I don’t have it now.'",
   "new_clue": "Eleanor confessed she initially stole the painting and hid it in the gazebo.",
   "suspect_update": {"Eleanor": "Appears relieved to have admitted the truth."},
-  "action": null,
-  "game_over": false
+  "action":  {"type": "question", "target": "Eleanor"},
+  "game_over": false,
 }
 
 **Example when player correctly accuses Molly:**

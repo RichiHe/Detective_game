@@ -10,6 +10,7 @@ export interface ChatResponse {
   game_over: boolean;
   solved: boolean | null;
   round: number;
+  current_scene: string;
 }
 
 export const sendMessage = async (sessionId: string | null, message: string): Promise<ChatResponse> => {

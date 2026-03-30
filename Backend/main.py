@@ -48,7 +48,7 @@ async def chat(request: dict):
             "suspect_update": {},
             "solved": state.solved,
             "round": state.round_count,
-             "current_scene": state.current_scene
+            "current_scene": state.current_scene
         }
 
     # Build context for AI
@@ -74,11 +74,21 @@ async def chat(request: dict):
 
     # Handle action (move, examine, etc.)
     action = result.get("action")
-    if action and action.get("type") == "move":
-        target = action.get("target")
-        # Simple validation – you can extend with a list of valid locations
-        if target in ["study", "living_room", "garden", "maid_room", "butler_room", "guest_room", "shed"]:
-            state.current_scene = target
+    if action:
+        type = action.get("type")
+        if  type == "move":
+            target = action.get("target")
+            # Simple validation – you can extend with a list of valid locations
+            if target in ["study", "living_room", "garden", "maid_room", "butler_room", "guest_room", "shed"]:
+                state.current_scene = target
+        elif type == "question":
+            target = action.get("target")
+            if target in ["Molly", "Alfred", "Eleanor", "Geroge"]:
+                state.current_scene = "question" + "_" + target
+        elif type == "accuse":
+            target = action.get("target")
+            if target in ["Molly", "Alfred", "Eleanor", "Geroge"]:
+                state.current_scene = "accuse" + "_" + target
 
     # Update game state if not game over
     if not result.get("game_over", False):
@@ -108,7 +118,8 @@ async def chat(request: dict):
         "suspect_update": result.get("suspect_update", {}),
         "game_over": state.game_over,
         "solved": state.solved,
-        "round": state.round_count
+        "round": state.round_count,
+        "current_scene": state.current_scene,
     }
 
 @app.get("/")
