@@ -47,7 +47,8 @@ async def chat(request: dict):
             "new_clue": None,
             "suspect_update": {},
             "solved": state.solved,
-            "round": state.round_count
+            "round": state.round_count,
+             "current_scene": state.current_scene
         }
 
     # Build context for AI
