@@ -26,7 +26,7 @@ const clueDisplayMap: Record<string, string> = {
   "frame paint": "You notice blue paint smudges on the back of the frame, still slightly wet. Maybe you should examine suspects.",
   "flowerpot fabric": "A torn fragment of fabric is caught on the rim of the flowerpot. Maybe you should search suspects' rooms.",
   "rose blood": "Fresh blood drops and a small torn cloth on a thorn. Maybe you should examine suspects.",
-  "gazebo cigarette": "Cigarette butts of a specific brand near the gazebo. Maybe you should examine suspects.",
+  "gazebo cigarette": "Cigarette butts of a specific brand 'Zhonghua' near the gazebo. Maybe you should search who has cigarettes of this brand.",
   "study carpet": "Red carpet fibers on the floor, as if dragged from the study. Maybe you should examine suspects.",
   "Eleanor letter": "Eleanor’s unsent letter reveals she planned to steal the painting to sell it and rescue her family’s business.",
   "Eleanor blood": "There is a band-aid on Eleanor's right index finger. It seems that her finger bled.",
@@ -279,7 +279,7 @@ function App() {
                 Clues you find will appear in the right panel. Some clues only appear after you search specific locations or confront suspects. Use logic to connect the dots.</p>
                 
                 <p><strong>⏱️ Rounds</strong><br />
-                You have 20 rounds to solve the case. Each action (move, question, examine) counts as one round. Use them wisely!</p>
+                You have 30 rounds to solve the case. Each action (move, question, examine) counts as one round. Use them wisely!</p>
               </div>
             </div>
             <div className="p-4 border-t flex justify-end">

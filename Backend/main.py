@@ -85,8 +85,9 @@ async def chat(request: dict):
                 state.current_scene = target
         elif type == "question":
             target = action.get("target")
-            if target in ["Molly", "Alfred", "Eleanor", "Geroge"]:
+            if target in ["Molly", "Alfred", "Eleanor", "George"]:
                 state.current_scene = "question" + "_" + target
+                print(state.current_scene)
         elif type == "accuse":
             target = action.get("target")
             if target in ["Molly", "Alfred", "Eleanor", "Geroge"]:
