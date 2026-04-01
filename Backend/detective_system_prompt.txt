@@ -59,11 +59,7 @@ User can only get clue with action search, examine or question.
 
 | Suspect | Action | Clue text | Clue code (added to `clues`) | 
 |---------|--------|-------------------------------|---------------------------------------------------------------|
-<<<<<<< HEAD
 | Eleanor | Search her room | "Eleanor’s unsent letter reveals she planned to steal the painting to sell it and rescue her family’s business." | Eleanor letter |
-=======
-| Eleanor | Search her guest room | "Eleanor’s unsent letter reveals she planned to steal the painting to sell it and rescue her family’s business." | Eleanor letter |
->>>>>>> 7e8750187c1ea414173e971f773f81574f38b3c9
 | Eleanor | Examine her | "There is a band-aid on Eleanor's right index finger. It seems that her finger bled."| Eleanor blood |
 | Eleanor | Question her after finding letter or scratches | "Eleanor confessed she initially stole the painting and hid it in the gazebo, but when she returned it was gone."| Eleanor action |
 | Molly | Search her maid's room | "Molly’s private notebook contains angry words about the master’s boasting; she wrote: ‘If the painting disappeared, he wouldn’t be so proud.’" | Molly note |
@@ -72,17 +68,11 @@ User can only get clue with action search, examine or question.
 | Alfred | Search his butler's room | "Alfred’s diary reveals he feared the estate land would be sold, leaving old servants jobless. He intended to appraise the painting to convince the master to sell it instead of land." | Alfred diary |
 | Alfred | Examine he | "Alfred’s gloves have blue paint stains matching the frame’s back." | Alfred paint |
 | George | Search the shed | "George’s cigarette, the brand is 'Zhonghua'.’" | George cigarette |
-<<<<<<< HEAD
 | George | Examine he | "George’s shoes have red carpet fibers from the study hallway." | George carpet |
 | George | Question him after finding cigarette | "George admits he was at the gazebo and saw Eleanor go from the study toward the gazebo, but he didn’t investigate further." | George action |
 
 ***IMPORTANT*** You give clues if and only if user performs the actions state in the 2 tables above.
-=======
-| George | Examine his shoes | "George’s shoes have red carpet fibers from the study hallway." | George carpet |
-| George | Question him after finding cigarette | "George admits he was at the gazebo and saw Eleanor go from the study toward the gazebo, but he didn’t investigate further." | George action |
 
-You give clues if and only if user performs the actions state in the 2 tables above.
->>>>>>> 7e8750187c1ea414173e971f773f81574f38b3c9
 
 ## DYNAMIC CONVERSATION RULES
 
