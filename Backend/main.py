@@ -97,7 +97,7 @@ async def chat(request: dict):
     if not result.get("game_over", False):
         state.round_count += 1
         if result.get("new_clue"):
-            state.clues.append(result["new_clue"])
+            state.clues.add(result["new_clue"])
         if result.get("suspect_update"):
             state.suspect_status.update(result["suspect_update"])
 
