@@ -30,7 +30,7 @@ async def chat(request: dict):
         games[session_id] = GameState(
             session_id=session_id,
             round_count=0,
-            current_scene="study",
+            current_scene="living_room",
             clues=[],
             suspect_status={},
             game_over=False,
@@ -64,7 +64,9 @@ async def chat(request: dict):
 
     try:
         result = json.loads(response_text)
+        
     except json.JSONDecodeError:
+        print(f"DEBUG: Json decode error")
         result = {
             "message": "The game master seems confused. Please rephrase your action.",
             "new_clue": None,
@@ -98,11 +100,11 @@ async def chat(request: dict):
         if result.get("suspect_update"):
             state.suspect_status.update(result["suspect_update"])
 
-        # Check for 20 round limit
-        if state.round_count >= 20:
+        # Check for 30 round limit
+        if state.round_count >= 30:
             state.game_over = True
             state.solved = False
-            result["message"] = "20 rounds have passed without solving the case. The true thief escapes. Game over."
+            result["message"] = "30 rounds have passed without solving the case. The true thief escapes. Game over."
             result["game_over"] = True
             result["solved"] = False
     else:
