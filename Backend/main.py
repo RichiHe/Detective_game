@@ -90,7 +90,7 @@ async def chat(request: dict):
                 print(state.current_scene)
         elif type == "accuse":
             target = action.get("target")
-            if target in ["Molly", "Alfred", "Eleanor", "Geroge"]:
+            if target in ["Molly", "Alfred", "Eleanor", "George"]:
                 state.current_scene = "accuse" + "_" + target
 
     # Update game state if not game over
