@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:8000';
+const API_BASE = 'https://detective-game-1-ewnq.onrender.com';
 
 export interface ChatResponse {
   session_id: string;
