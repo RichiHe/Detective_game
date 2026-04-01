@@ -30,7 +30,7 @@ async def chat(request: dict):
         games[session_id] = GameState(
             session_id=session_id,
             round_count=0,
-            current_scene="study",
+            current_scene="living_room",
             clues=[],
             suspect_status={},
             game_over=False,
@@ -47,7 +47,8 @@ async def chat(request: dict):
             "new_clue": None,
             "suspect_update": {},
             "solved": state.solved,
-            "round": state.round_count
+            "round": state.round_count,
+            "current_scene": state.current_scene
         }
 
     # Build context for AI
@@ -63,7 +64,9 @@ async def chat(request: dict):
 
     try:
         result = json.loads(response_text)
+        
     except json.JSONDecodeError:
+        print(f"DEBUG: Json decode error")
         result = {
             "message": "The game master seems confused. Please rephrase your action.",
             "new_clue": None,
@@ -73,11 +76,22 @@ async def chat(request: dict):
 
     # Handle action (move, examine, etc.)
     action = result.get("action")
-    if action and action.get("type") == "move":
-        target = action.get("target")
-        # Simple validation – you can extend with a list of valid locations
-        if target in ["study", "living_room", "garden", "maid_room", "butler_room", "guest_room", "shed"]:
-            state.current_scene = target
+    if action:
+        type = action.get("type")
+        if  type == "move":
+            target = action.get("target")
+            # Simple validation – you can extend with a list of valid locations
+            if target in ["study", "living_room", "garden", "maid_room", "butler_room", "guest_room", "shed"]:
+                state.current_scene = target
+        elif type == "question":
+            target = action.get("target")
+            if target in ["Molly", "Alfred", "Eleanor", "George"]:
+                state.current_scene = "question" + "_" + target
+                print(state.current_scene)
+        elif type == "accuse":
+            target = action.get("target")
+            if target in ["Molly", "Alfred", "Eleanor", "Geroge"]:
+                state.current_scene = "accuse" + "_" + target
 
     # Update game state if not game over
     if not result.get("game_over", False):
@@ -87,11 +101,11 @@ async def chat(request: dict):
         if result.get("suspect_update"):
             state.suspect_status.update(result["suspect_update"])
 
-        # Check for 20 round limit
-        if state.round_count >= 20:
+        # Check for 30 round limit
+        if state.round_count >= 30:
             state.game_over = True
             state.solved = False
-            result["message"] = "20 rounds have passed without solving the case. The true thief escapes. Game over."
+            result["message"] = "30 rounds have passed without solving the case. The true thief escapes. Game over."
             result["game_over"] = True
             result["solved"] = False
     else:
@@ -107,7 +121,8 @@ async def chat(request: dict):
         "suspect_update": result.get("suspect_update", {}),
         "game_over": state.game_over,
         "solved": state.solved,
-        "round": state.round_count
+        "round": state.round_count,
+        "current_scene": state.current_scene,
     }
 
 @app.get("/")
