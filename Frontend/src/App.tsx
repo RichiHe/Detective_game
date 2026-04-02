@@ -242,7 +242,7 @@ function App() {
                 Lord Arthur's valuable painting "The Morning Maiden" has been stolen from his study during a dinner party. You are a detective's assistant, tasked with uncovering the truth before the thief escapes.</p>
                 
                 <p><strong>🎯 Goal</strong><br />
-                Find the real thief and recover the painting within <strong>20 rounds</strong>. Accuse the correct suspect with evidence.</p>
+                Find the real thief and recover the painting within <strong>30 rounds</strong>. Accuse the correct suspect with evidence.</p>
 
                 <p><strong>👥 Suspects</strong><br/></p>
                 <ul className="list-disc list-inside ml-4">
