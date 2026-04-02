@@ -15,10 +15,10 @@ const sceneBackgrounds: Record<string, string> = {
   shed: '/images/shed.jpg',
   question_Eleanor: '/images/question_Eleanor.jpg',
   question_George: '/images/question_George.jpg',
-  accuse_George: '/images/question_George.jpg',
-  accuse_Molly: '/images/question_Molly.jpg',
-  accuse_Alfred: '/images/question_Alfred.jpg',
-  accuse_Eleanor: '/images/question_Eleanor.jpg',
+  accuse_George: '/images/accuse_George.jpg',
+  accuse_Molly: '/images/accuse_Molly.jpg',
+  accuse_Alfred: '/images/accuse_Alfred.jpg',
+  accuse_Eleanor: '/images/accuse_Eleanor.jpg',
 };
 
 
