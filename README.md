@@ -2,7 +2,7 @@
 
 An interactive Victorian-era mystery game where you play as a detective's assistant. Interrogate suspects, examine crime scenes, and uncover the truth using natural language. Powered by Groq LLM (Llama 3) for dynamic storytelling.
 
-**🎮 Play the game:** [https://your-deployed-frontend-url.vercel.app](https://detective-game-git-main-richihes-projects.vercel.app/)
+**🎮 Play the game:** [Clike here](https://detective-game-git-main-richihes-projects.vercel.app/)
 
 
 ## ✨ Features
